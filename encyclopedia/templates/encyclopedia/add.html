@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1> Create New Page </h1>
+    <form class="container-fluid" method="post">
+        {{form}}
+        {% csrf_token %}
+        {% if error %}
+        <p class="error text-danger">
+        {{error}}
+        </p>
+    {% endif %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+        
+{% endblock %}
